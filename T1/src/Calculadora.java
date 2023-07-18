@@ -1,16 +1,16 @@
 import java.util.HashMap;
 import java.util.Map;
 import java.util.function.BinaryOperator;
-
 public class Calculadora {
     public static void main(String[] args) {
-        if (args.length != 3) {
-            System.out.println("Argumentos insuficientes");
+        try {
+            int valueA = Integer.parseInt(args[0]);
+            int valueB = Integer.parseInt(args[1]);
+            String operation = args[2];
+            System.out.println(Calculate(valueA, valueB, operation));
+        } catch (Exception e) {
+            System.out.println("Error: ".concat(e.getMessage()));
         }
-        int valueA = Integer.parseInt(args[0]);
-        int valueB = Integer.parseInt(args[1]);
-        String operation = args[2];
-        System.out.println(Calculate(valueA, valueB, operation));
     }
     public static int Calculate(int x, int y, String operation){
         Map<String, BinaryOperator<Integer>> operations = new HashMap<>();
