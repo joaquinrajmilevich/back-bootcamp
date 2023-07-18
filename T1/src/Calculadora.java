@@ -13,11 +13,11 @@ public class Calculadora {
         System.out.println(Calculate(a, b, operation));
     }
     public static int Calculate(int x, int y, String operation){
-        Map<String, BinaryOperator<Integer>> operaciones = new HashMap<>();
-        operaciones.put("SUM", (a, b) -> a + b);
-        operaciones.put("RES", (a, b) -> a - b);
-        operaciones.put("MUL", (a, b) -> a * b);
-        operaciones.put("DIV", (a, b) -> a / b);
-        return operaciones.get(operation).apply(x, y);
+        Map<String, BinaryOperator<Integer>> operations = new HashMap<>();
+        operations.put("SUM", Integer::sum);
+        operations.put("RES", (a, b) -> a - b);
+        operations.put("MUL", (a, b) -> a * b);
+        operations.put("DIV", (a, b) -> a / b);
+        return operations.get(operation).apply(x, y);
     }
 }
