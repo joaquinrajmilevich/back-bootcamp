@@ -7,10 +7,10 @@ public class Calculadora {
         if (args.length != 3) {
             System.out.println("Argumentos insuficientes");
         }
-        int a = Integer.parseInt(args[0]);
-        int b = Integer.parseInt(args[1]);
+        int valueA = Integer.parseInt(args[0]);
+        int valueB = Integer.parseInt(args[1]);
         String operation = args[2];
-        System.out.println(Calculate(a, b, operation));
+        System.out.println(Calculate(valueA, valueB, operation));
     }
     public static int Calculate(int x, int y, String operation){
         Map<String, BinaryOperator<Integer>> operations = new HashMap<>();
